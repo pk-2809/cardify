@@ -1,7 +1,24 @@
+import { useEffect } from 'react';
 import './App.css';
 import Designer from './Designer.png';
+import callApi from './utils/callApi';
 
 function App() {
+
+	useEffect(() => {
+		// validateMobileAndPass();
+	}, [])
+
+	async function validateMobileAndPass() {
+		try {
+			const res = await callApi('login', { mobileNumber: '800922514', password: '123456' });
+			console.log(res);
+		}
+		catch (err) {
+			console.log(err);
+		}
+	}
+
 	return (
 		<div className="h-screen flex items-center justify-between  gap-8">
 			<div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-gray-200 text-gray-800">
