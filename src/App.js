@@ -1,57 +1,63 @@
-import './App.css';
-import Designer from './Designer.png';
+import React from 'react';
 
 function App() {
-	return (
-		<div className="h-screen flex items-center justify-between  gap-8">
-			<div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-gray-200 text-gray-800">
-				<img src={Designer} />
-			</div>
-			<div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-gray-200 text-gray-800">
-				<h1 className="text-2xl font-bold text-center">Login</h1>
-				<form noValidate="" action="" className="space-y-6">
-					<div className="space-y-1 text-sm">
-						<label htmlFor="username" className="block text-gray-600">Username</label>
-						<input type="text" name="username" id="username" placeholder="Username" className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-teal-600" />
-					</div>
-					<div className="space-y-1 text-sm">
-						<label htmlFor="password" className="block text-gray-600">Password</label>
-						<input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-teal-600" />
-						<div className="flex justify-end text-xs text-gray-600">
-							<a rel="noopener noreferrer" href="#">Forgot Password?</a>
-						</div>
-					</div>
-					<button className="block w-full p-3 text-center rounded-sm text-gray-50 bg-teal-600">Sign in</button>
-				</form>
-				<div className="flex items-center pt-4 space-x-1">
-					<div className="flex-1 h-px sm:w-16 bg-gray-300"></div>
-					<p className="px-3 text-sm text-gray-600">Login with social accounts</p>
-					<div className="flex-1 h-px sm:w-16 bg-gray-300"></div>
-				</div>
-				<div className="flex justify-center space-x-4">
-					<button aria-label="Log in with Google" className="p-3 rounded-sm">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className="w-5 h-5 fill-current">
-							<path d="M16.318 13.714v5.484h9.078c-0.37 2.354-2.745 6.901-9.078 6.901-5.458 0-9.917-4.521-9.917-10.099s4.458-10.099 9.917-10.099c3.109 0 5.193 1.318 6.38 2.464l4.339-4.182c-2.786-2.599-6.396-4.182-10.719-4.182-8.844 0-16 7.151-16 16s7.156 16 16 16c9.234 0 15.365-6.49 15.365-15.635 0-1.052-0.115-1.854-0.255-2.651z"></path>
-						</svg>
-					</button>
-					<button aria-label="Log in with Twitter" className="p-3 rounded-sm">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className="w-5 h-5 fill-current">
-							<path d="M31.937 6.093c-1.177 0.516-2.437 0.871-3.765 1.032 1.355-0.813 2.391-2.099 2.885-3.631-1.271 0.74-2.677 1.276-4.172 1.579-1.192-1.276-2.896-2.079-4.787-2.079-3.625 0-6.563 2.937-6.563 6.557 0 0.521 0.063 1.021 0.172 1.495-5.453-0.255-10.287-2.875-13.52-6.833-0.568 0.964-0.891 2.084-0.891 3.303 0 2.281 1.161 4.281 2.916 5.457-1.073-0.031-2.083-0.328-2.968-0.817v0.079c0 3.181 2.26 5.833 5.26 6.437-0.547 0.145-1.131 0.229-1.724 0.229-0.421 0-0.823-0.041-1.224-0.115 0.844 2.604 3.26 4.5 6.14 4.557-2.239 1.755-5.077 2.801-8.135 2.801-0.521 0-1.041-0.025-1.563-0.088 2.917 1.86 6.36 2.948 10.079 2.948 12.067 0 18.661-9.995 18.661-18.651 0-0.276 0-0.557-0.021-0.839 1.287-0.917 2.401-2.079 3.281-3.396z"></path>
-						</svg>
-					</button>
-					<button aria-label="Log in with GitHub" className="p-3 rounded-sm">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className="w-5 h-5 fill-current">
-							<path d="M16 0.396c-8.839 0-16 7.167-16 16 0 7.073 4.584 13.068 10.937 15.183 0.803 0.151 1.093-0.344 1.093-0.772 0-0.38-0.009-1.385-0.015-2.719-4.453 0.964-5.391-2.151-5.391-2.151-0.729-1.844-1.781-2.339-1.781-2.339-1.448-0.989 0.115-0.968 0.115-0.968 1.604 0.109 2.448 1.645 2.448 1.645 1.427 2.448 3.744 1.74 4.661 1.328 0.14-1.031 0.557-1.74 1.011-2.135-3.552-0.401-7.287-1.776-7.287-7.907 0-1.751 0.62-3.177 1.645-4.297-0.177-0.401-0.719-2.031 0.141-4.235 0 0 1.339-0.427 4.4 1.641 1.281-0.355 2.641-0.532 4-0.541 1.36 0.009 2.719 0.187 4 0.541 3.043-2.068 4.381-1.641 4.381-1.641 0.859 2.204 0.317 3.833 0.161 4.235 1.015 1.12 1.635 2.547 1.635 4.297 0 6.145-3.74 7.5-7.296 7.891 0.556 0.479 1.077 1.464 1.077 2.959 0 2.14-0.020 3.864-0.020 4.385 0 0.416 0.28 0.916 1.104 0.755 6.4-2.093 10.979-8.093 10.979-15.156 0-8.833-7.161-16-16-16z"></path>
-						</svg>
-					</button>
-				</div>
-				<p className="text-xs text-center sm:px-6 text-gray-600">Don't have an account?
-					<a rel="noopener noreferrer" href="#" className="underline text-gray-800">Sign up</a>
-				</p>
-			</div>
-
-		</div>
-	);
+  return (
+    <section className="h-screen flex flex-col md:flex-row justify-center space-y-10 md:space-y-0 md:space-x-16 items-center my-2 mx-5 md:mx-0 md:my-0">
+      <div className="md:w-1/3 max-w-sm">
+        <img
+          src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+          alt="Sample image" />
+      </div>
+      <div className="md:w-1/3 max-w-sm">
+        <div className="text-center md:text-left">
+          <label className="mr-1">Sign in with</label>
+          <button
+            type="button"
+            className="mx-1 h-9 w-9 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-[0_4px_9px_-4px_#3b71ca]">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="mx-auto h-3.5 w-3.5"
+              fill="currentColor"
+              viewBox="0 0 24 24">
+              <path
+                d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            className="inlne-block mx-1 h-9 w-9 rounded-full bg-blue-600 hover:bg-blue-700 uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca]">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="mx-auto h-3.5 w-3.5"
+              fill="currentColor"
+              viewBox="0 0 24 24">
+              <path
+                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+            </svg>
+          </button>
+        </div>
+        <div className="my-5 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
+          <p className="mx-4 mb-0 text-center font-semibold text-slate-500">Or</p>
+        </div>
+        <input className="text-sm w-full px-4 py-2 border border-solid border-gray-300 rounded" type="text" placeholder="Email Address or Phone Number" />
+        <button className="mt-4 bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white uppercase rounded text-xs tracking-wider" type="button">Send OTP</button>
+        {/* <input className="text-sm w-full px-4 py-2 border border-solid border-gray-300 rounded mt-4" type="text" placeholder="Enter OTP" /> */}
+        <div className="mt-4 flex justify-between font-semibold text-sm">
+          <label className="flex text-slate-500 hover:text-slate-600 cursor-pointer">
+            <input className="mr-1" type="checkbox" />
+            <span>Remember Me</span>
+          </label>
+          {/* <a className="text-blue-600 hover:text-blue-700 hover:underline hover:underline-offset-4" href="#">Resend OTP</a> */}
+        </div>
+        {/* <div className="text-center md:text-left">
+          <button className="mt-4 bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white uppercase rounded text-xs tracking-wider" type="submit">Login</button>
+        </div> */}
+        <div className="mt-4 font-semibold text-sm text-slate-500 text-center md:text-left">
+          Don't have an account? <a className="text-red-600 hover:underline hover:underline-offset-4" href="#">Register</a>
+        </div>
+      </div>
+    </section>
+  );
 }
 
 export default App;
