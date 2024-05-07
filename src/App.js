@@ -1,22 +1,37 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import Designer from './Designer.png';
 import callApi from './utils/callApi';
 
 function App() {
 
+	const [email, setEmail] = useState('');
+	const [otp, setOtp] = useState('');
+
 	useEffect(() => {
-		// validateMobileAndPass();
 	}, [])
 
-	async function validateMobileAndPass() {
+	async function sendOtp(e) {
+		console.log(email, '-----', otp);
+		e.preventDefault();
 		try {
-			const res = await callApi('login', { mobileNumber: '800922514', password: '123456' });
-			console.log(res);
+			if (email.length > 13) {
+				const res = await callApi('sendOtp', { email: email });
+				console.log(res);
+			}
 		}
 		catch (err) {
 			console.log(err);
 		}
+	}
+
+	async function verifyOtp(e) {
+		e.preventDefault();
+		callApi('verifyOtp', { email: email, otp: otp }).then((res) => {
+			console.log(res);
+		}, (err) => {
+			console.log(err);
+		});
 	}
 
 	return (
@@ -26,19 +41,20 @@ function App() {
 			</div>
 			<div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-gray-200 text-gray-800">
 				<h1 className="text-2xl font-bold text-center">Login</h1>
-				<form noValidate="" action="" className="space-y-6">
+				<form className="space-y-6">
 					<div className="space-y-1 text-sm">
 						<label htmlFor="username" className="block text-gray-600">Username</label>
-						<input type="text" name="username" id="username" placeholder="Username" className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-teal-600" />
+						<input type="text" name="username" id="username" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Username" className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-teal-600" />
 					</div>
 					<div className="space-y-1 text-sm">
 						<label htmlFor="password" className="block text-gray-600">Password</label>
-						<input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-teal-600" />
+						<input type="password" name="password" id="password" value={otp} onChange={(e) => setOtp(e.target.value)} placeholder="Otp" className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-teal-600" />
 						<div className="flex justify-end text-xs text-gray-600">
 							<a rel="noopener noreferrer" href="#">Forgot Password?</a>
 						</div>
 					</div>
-					<button className="block w-full p-3 text-center rounded-sm text-gray-50 bg-teal-600">Sign in</button>
+					<button onClick={sendOtp} className="block w-full p-3 text-center rounded-sm text-gray-50 bg-teal-600">Sign in</button>
+					<button onClick={verifyOtp} className="block w-full p-3 text-center rounded-sm text-gray-50 bg-teal-600">Verify</button>
 				</form>
 				<div className="flex items-center pt-4 space-x-1">
 					<div className="flex-1 h-px sm:w-16 bg-gray-300"></div>
