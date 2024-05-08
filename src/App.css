@@ -1,0 +1,8 @@
+html,
+:host {
+    -webkit-text-size-adjust: 100%;
+}
+
+.h-screen {
+    height: calc(var(--vh, 1vh) * 100);
+}
