@@ -1,5 +1,6 @@
 import { React, useEffect } from 'react';
 import { Login } from './pages/login';
+import { Home } from './pages/home';
 import { Routes, Route } from "react-router-dom";
 import './App.css';
 
@@ -16,6 +17,7 @@ function App() {
 	return (
 		<Routes>
 			<Route exact path="/" element={<Login />} />
+			<Route exact path="/Home" element={<Home />} />
 		</Routes>
 	);
 }
