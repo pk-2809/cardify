@@ -1,6 +1,7 @@
 import LoginBg from '../assets/Login.png';
 import Login1 from '../assets/Login1.png';
 import './login.css';
+import { Button } from "flowbite-react";
 
 export const Login = () => {
     return (
@@ -13,6 +14,7 @@ export const Login = () => {
                     <div className="my-1 md:my-2 text-sm md:text-base lg:text-lg">OTP</div>
                     <input type="tel" className="p-3 md:p-4 w-full rounded-xl border border-gray-300 border-solid bg-slate-50 text-slate-400" placeholder="Enter OTP" />
                     <div className="w-full text-center">
+                        <Button>Click me</Button>
                         <button className="mt-5 p-4 w-3/5 text-xs sm:text-base lg:text-lg text-center text-white rounded-xl bg-slate-800">Get OTP</button>
                     </div>
                 </div>
