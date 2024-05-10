@@ -6,3 +6,12 @@ html,
 .h-screen {
     height: calc(var(--vh, 1vh) * 100);
 }
+.primary-bg{
+background-color: #004AAD;
+}
+.text-color{
+    color: #E385EC;
+}
+.secondary-bg{
+background-color: #E385EC ;
+}

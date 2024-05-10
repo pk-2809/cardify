@@ -44,3 +44,4 @@ export const Home = () => {
     </div>
   );
 };
+
