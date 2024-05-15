@@ -1,6 +1,6 @@
 import LoginBg from "../assets/Login.png";
 import Login1 from "../assets/Login1.png";
-import bgImage from "../assets/bgImage.png";
+import bgImage1 from "../assets/bgImage1.png";
 import "./login.css";
 
 export const Login = () => {
@@ -14,33 +14,37 @@ export const Login = () => {
           <div className="my-1 md:my-2 text-sm md:text-base lg:text-lg text-white">
             Email
           </div>
-          <input
+
+          <input type="email" className="inpt mb-2 p-3 md:p-4 w-full rounded-xl" placeholder="Example@email.com"/>
+          
+          {/* <input
             type="email"
             className="mb-2 p-3 md:p-4 w-full rounded-xl border border-gray-300 border-solid bg-slate-50 text-slate-400"
             placeholder="Example@email.com"
-          />
+          /> */}
           <div className="my-1 md:my-2 text-sm md:text-base lg:text-lg text-white">
             OTP
           </div>
+
+          <input type="tel" className="inpt p-3 md:p-4 w-full rounded-xl" placeholder="ENTER OTP"/>
+{/* 
           <input
             type="tel"
             className="p-3 md:p-4 w-full rounded-xl border border-gray-300 border-solid bg-slate-50 text-slate-400"
             placeholder="Enter OTP"
-          />
+          /> */}
           <div className="w-full text-center">
-            
-          <button className="btn mt-8 p-4 w-3/5 text-xs sm:text-base lg:text-lg text-center rounded-xl secondary-bg text-white">
-    <span>GET OTP</span>
-</button>
-            {/* <button className="mt-8 p-4 w-3/5 text-xs sm:text-base lg:text-lg text-center rounded-xl secondary-bg text-white">
-              Get OTP
-            </button> */}
+            <button className="btn mt-8 p-4 w-3/5 text-xs sm:text-base lg:text-lg text-center rounded-xl secondary-bg text-white">
+              <span className="shadow"></span>
+              <span className="edge"></span>
+              <span className="front text"> GET OTP</span>
+            </button>
           </div>
         </div>
       </div>
       <div className="w-full md:w-1/2 h-2/5 md:h-screen grid place-items-center">
         <img
-          src={bgImage}
+          src={bgImage1}
           alt="logo"
           className="max-h-full max-w-fulls lg:max-w-4/5  overflow-hidden"
         />

@@ -17,12 +17,13 @@ export const Home = () => {
             with you with all the features stored in one place.
           </p>
 
-          <button className=" btn w-full sm:w-fit mt-8 sm:mt-2 p-4 text-sm sm:text-base lg:text-lg text-center text-1786df bg-white rounded-xl">
-    <span>ADD CARD</span>
-</button>
-          {/* <button className="w-full sm:w-fit mt-8 sm:mt-2 p-4 text-sm sm:text-base lg:text-lg text-center text-1786df bg-white rounded-xl">
-            ADD CARD
-          </button> */}
+
+          <button className="btn w-full sm:w-fit mt-8 sm:mt-2 p-4 text-sm sm:text-base lg:text-lg text-center text-1786df bg-white rounded-xl">
+              <span className="shadow"></span>
+              <span className="edge"></span>
+              <span className="front text"> ADD CARD</span>
+            </button>
+      
         </div>
       </div>
 
