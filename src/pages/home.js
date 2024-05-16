@@ -19,17 +19,17 @@ export const Home = () => {
 
 
           <button className="btn w-full sm:w-fit mt-8 sm:mt-2 p-4 text-sm sm:text-base lg:text-lg text-center text-1786df bg-white rounded-xl">
-              <span className="shadow"></span>
-              <span className="edge"></span>
-              <span className="front text"> ADD CARD</span>
-            </button>
-      
+            <span className="shadow"></span>
+            <span className="edge"></span>
+            <span className="front text"> ADD CARD</span>
+          </button>
+
         </div>
       </div>
 
       <div className="md:w-3/5 w-full h-2/5 md:h-screen lg:h-full flex flex-col justify-center items-center">
         <div className="flex justify-center items-center w-full h-full">
-          <div className="card rounded-xl md:rounded-2xl lg:rounded-3xl flex w-4/5 sm:w-3/5 md:w-9/12 lg:w-4/5 max-w-80 sm:max-w-md lg:max-w-lg h-2/4 sm:h-3/4 md:h-1/3 lg:h-2/5 max-h-40 sm:max-h-none">
+          <div className="card rounded-xl md:rounded-2xl lg:rounded-3xl flex justify-between w-4/5 md:w-9/12 lg:w-4/5 max-w-80 sm:max-w-96 lg:max-w-lg h-2/4 sm:h-3/4 md:h-1/3 lg:h-2/5 max-h-40 sm:max-h-60 lg:max-h-72">
             <div className="p-4 md:p-6 lg:p-8 w-3/4 md:w-4/5 lg:w-3/4 flex flex-col justify-between">
               <div>
                 <p className="font-bold text-md sm:text-xl md:text-3xl lg:text-4xl text-white">ALICE SINGH</p>
@@ -40,7 +40,7 @@ export const Home = () => {
                 <h1 className="ms-2 lg:ms-4 sm:mb-1 text-xs lg:text-lg xl:text-xl font-semibold text-white">2022 2022 2022 2022</h1>
               </div>
             </div>
-            <div className="rounded-xl md:rounded-2xl flex items-center justify-center lg:rounded-3xl bg-white w-1/4 md:w-1/5	lg:w-1/4 rounded-r-lg">
+            <div className="rounded-xl md:rounded-2xl flex items-center justify-center lg:rounded-3xl bg-white w-1/4 md:w-1/5	lg:w-1/4 rounded-r-lg max-w-14 sm:max-w-20 md:max-w-24">
               <p className="rotate-[270deg] font-bold text-blue-600 text-xl sm:text-2xl md:text-3xl xl:text-4xl">CARDIFY</p>
             </div>
           </div>
