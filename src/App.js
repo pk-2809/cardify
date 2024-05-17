@@ -1,9 +1,9 @@
 import { React, useEffect } from 'react';
-import { Login } from './pages/login';
-import { Home } from './pages/home';
-import { AddCard } from './pages/addcard';
-
-import { Routes, Route } from "react-router-dom";
+import { Login } from './pages/login/login';
+import { Home } from './pages/home/Home';
+import { AddCard } from './pages/add-card/addcard';
+import { Navbar } from './pages/shared/navbar/Navbar';
+import { Routes, Route, useLocation } from "react-router-dom";
 import './App.css';
 
 function App() {
@@ -16,12 +16,23 @@ function App() {
 		});
 	}, []);
 
+	const location = useLocation();
+	const shouldShowNavbar = location.pathname !== '/';
+
 	return (
-		<Routes>
-			<Route exact path="/" element={<Login />} />
-			<Route exact path="/Home" element={<Home />} />
-			<Route exact path="/Add-Card" element={<AddCard />} />
-		</Routes>
+		<div className='bg-gradient flex justify-center'>
+			<div className='w-512'>
+				{shouldShowNavbar && <Navbar />}
+				<div className='h-screen'>
+					<Routes>
+						<Route exact path="/" element={<Login />} />
+						<Route exact path="/home" element={<Home />} />
+						<Route exact path="/add-card" element={<AddCard />} />
+					</Routes>
+				</div>
+				{shouldShowNavbar && <Navbar />}
+			</div>
+		</div>
 	);
 }
 

@@ -1,10 +1,10 @@
-import bgImage1 from "../assets/bgImage1.png";
+import bgImage1 from "../../assets/bgImage1.png";
 import "./login.css";
 
 export const Login = () => {
   return (
-    <div className="h-screen overflow-hidden primary-bg flex flex-col-reverse md:flex-row">
-      <div className="w-full md:w-1/2 h-1/2 md:h-screen grid place-items-center">
+    <div className="h-screen-full overflow-hidden primary-bg flex flex-col-reverse md:flex-row">
+      <div className="w-full md:w-1/2 h-1/2 md:h-screen-full grid place-items-center">
         <div className="w-4/5 max-w-md">
           <h1 className="mb-2 font-semibold text-2xl md:text-3xl lg:text-4xl text-white">
             Welcome Back
@@ -26,7 +26,7 @@ export const Login = () => {
           </div>
         </div>
       </div>
-      <div className="w-full md:w-1/2 h-1/2 md:h-screen grid place-items-center">
+      <div className="w-full md:w-1/2 h-1/2 md:h-screen-full grid place-items-center">
         <img
           src={bgImage1}
           alt="logo"
