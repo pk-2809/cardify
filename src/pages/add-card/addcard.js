@@ -1,5 +1,7 @@
 import styles from './addcard.module.css';
 import { TextInput } from '@mantine/core';
+import { MonthPickerInput } from '@mantine/dates';
+import { NumberInput } from '@mantine/core';
 
 
 export const AddCard = () => {
@@ -8,16 +10,41 @@ export const AddCard = () => {
       <div className="my-2 w-11/12 rounded-lg">
         <div className="form flex gap-3 justify-between">
           <TextInput
-            placeholder="TextInput component"
-            label="TextInput component"
+            placeholder="First Name"
+            label="First Name"
             classNames={styles}
             className='inpt'
           />
           <TextInput
-            placeholder="TextInput component"
-            label="TextInput component"
+            placeholder="Last Name"
+            label="Last Name"
             classNames={styles}
             className='inpt'
+          />
+        </div>
+        <div className="form flex gap-3 justify-between">
+          <TextInput
+            placeholder="Card Name"
+            label="Your Card Name"
+            classNames={styles}
+            className='inpt'
+          />
+
+        </div>
+        <div className="form flex gap-3 justify-between">
+          <TextInput
+            placeholder="Card Number"
+            label="Card Number"
+            classNames={styles}
+            className='inpt w-full'
+          />
+
+        </div>
+        <div className="form flex gap-3 justify-between">
+          <NumberInput label="Hide controls" placeholder="Hide controls" hideControls />
+          <MonthPickerInput
+            label="Pick date"
+            placeholder="Pick date"
           />
         </div>
       </div>
