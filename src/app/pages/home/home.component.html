@@ -1,0 +1,35 @@
+<div class="h-full py-4">
+    <ng-container *ngIf="isNoCard">
+        <div class="h-full flex flex-col justify-evenly">
+            <div class="w-100 flex justify-center">
+                <img src="../../../assets/card.png" class="w-4/5 xs:w-3/5" alt="Card image">
+            </div>
+
+            <div class="flex flex-col items-center">
+                <div class="box w-4/5 xs:w-3/5">
+                    <div class="flex mb-4">
+                        <div class="w-1/4 min-w-8 max-w-8 xs:w-20 flex items-center">
+                            <mat-icon color="accent" fontIcon="public"></mat-icon>
+                        </div>
+                        <p class="text-xs xs:text-sm">Make Purchases and pay bills on your favourite platforms like
+                            Netflix,
+                            Amazon,
+                            Zomato & More</p>
+                    </div>
+                    <div class="flex">
+                        <div class="w-1/4 min-w-8 max-w-8 xs:w-20 flex items-center">
+                            <mat-icon color="accent" fontIcon="verified_user"></mat-icon>
+                        </div>
+                        <p class="text-xs xs:text-sm">Your card cannot get lost or stolen. Your details are end to end
+                            secure in an
+                            application.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5 flex justify-center">
+                <button mat-raised-button color="primary">Add your first card</button>
+            </div>
+        </div>
+    </ng-container>
+
+</div>
