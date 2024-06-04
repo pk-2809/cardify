@@ -1,19 +1,24 @@
-<div class="bg-yellow-200 min-h-screen w-100 flex flex-col items-center justify-evenly">
-    <div class="flex justify-center">
-        <img class="w-11/12 xs:w-96" src="../../../assets/login.png" alt="Login" srcset="">
+<div class="min-h-screen w-full flex flex-col items-center justify-evenly">
+
+    <div class="text-center hidden md:block">
+        <h1 class="bold text-5xl primary-text">Cardify</h1>
     </div>
-    <div class="box w-4/5 xs:w-3/5 flex flex-col items-center">
-        <mat-form-field class="w-11/12 xs:w-full mt-2 xs:mt-0">
-            <mat-label>Email</mat-label>
-            <input matInput type="text">
-        </mat-form-field>
-        <mat-form-field class="w-11/12 xs:w-full">
-            <mat-label>Otp</mat-label>
-            <input matInput type="text">
-        </mat-form-field>
-
-        <button mat-raised-button color="primary" class="w-11/12 xs:w-full mb-2 xs:mb-0">Get Otp</button>
-
+    <div class="w-full md:w-11/12 flex flex-col gap-10 md:gap-3 md:flex-row items-center justify-evenly">
+        <div class="flex justify-center">
+            <img class="w-11/12 xs:w-96" src="../../../assets/login.png" alt="Login" srcset="">
+        </div>
+        <div class="box w-4/5 xs:w-3/5 max-w-md flex flex-col items-center bg-white shadow-2xl">
+            <h1 class="text-2xl font-bold mb-4 primary-text">Enter your login details</h1>
+            <mat-form-field class="w-11/12 xs:w-full mt-2 xs:mt-0">
+                <mat-label>Email</mat-label>
+                <input matInput type="text">
+            </mat-form-field>
+            <mat-form-field class="w-11/12 xs:w-full">
+                <mat-label>Otp</mat-label>
+                <input matInput type="text">
+            </mat-form-field>
+            <button mat-raised-button color="primary" class="w-11/12 xs:w-full mb-2 xs:mb-0">Get Otp</button>
+        </div>
     </div>
 
 </div>

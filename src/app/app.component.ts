@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
+import { Subscription, filter } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +10,31 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'cardify';
   isLogin: boolean = true;
+  private routerEventsSubscription?: Subscription;
+
   constructor(
     private router: Router
-  ) {
+  ) { }
+
+  ngOnInit() {
+    this.routerEventsSubscription = this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        if (event.url === '/login') {
+          this.isLogin = true;
+        }
+        else {
+          this.isLogin = false;
+        }
+      }
+    });
+  }
+
+  ngOnDestroy() {
+    if (this.routerEventsSubscription) {
+      this.routerEventsSubscription.unsubscribe();
+    }
   }
 
 }

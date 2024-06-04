@@ -1,12 +1,13 @@
-<div *ngIf="isLogin">
-    <router-outlet></router-outlet>
-</div>
-<div class="bg-slate-100 flex justify-center min-h-screen" *ngIf="!isLogin">
-    <div class="max-w-screen-sm w-full bg-white flex flex-col">
+<div class="secondary-bg flex justify-center min-h-screen" *ngIf="!isLogin">
+    <div class="max-w-screen-sm w-full other-bg flex flex-col shadow-lg">
         <app-header></app-header>
         <div class="flex-grow">
             <router-outlet></router-outlet>
         </div>
-        <!-- <app-footer></app-footer> -->
+        <app-footer></app-footer>
     </div>
+</div>
+
+<div *ngIf="isLogin" class="secondary-bg">
+    <router-outlet></router-outlet>
 </div>

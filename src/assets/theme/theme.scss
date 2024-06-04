@@ -1,0 +1,103 @@
+@use '@angular/material' as mat;
+
+$custom-primary: mat.define-palette((50: #e0f2ea,
+            100: #b3ddc7,
+            200: #80c6a0,
+            300: #4daf79,
+            400: #26a45d,
+            500: #1a4d2e,
+            600: #0f4527,
+            700: #093c20,
+            800: #023319,
+            900: #002612,
+            A100: #a2f5c1,
+            A200: #6af097,
+            A400: #35eb6f,
+            A700: #0ee65b,
+            contrast: (50: #000000,
+                100: #000000,
+                200: #000000,
+                300: #000000,
+                400: #000000,
+                500: #ffffff,
+                600: #ffffff,
+                700: #ffffff,
+                800: #ffffff,
+                900: #ffffff,
+                A100: #000000,
+                A200: #000000,
+                A400: #000000,
+                A700: #ffffff)));
+
+// Define custom secondary color palette
+$custom-secondary: mat.define-palette((50: #f7f4eb,
+            100: #f0e9d5,
+            200: #e8dfca, // default secondary color
+            300: #e0d5be,
+            400: #d9ccb3,
+            500: #d1c3a7,
+            600: #cbb99b,
+            700: #c5af90,
+            800: #bfa585,
+            900: #b89b7a,
+            A100: #ffffff,
+            A200: #ffffff,
+            A400: #ffffff,
+            A700: #ffffff,
+            contrast: (50: #000000,
+                100: #000000,
+                200: #000000,
+                300: #000000,
+                400: #000000,
+                500: #000000,
+                600: #000000,
+                700: #000000,
+                800: #000000,
+                900: #000000,
+                A100: #000000,
+                A200: #000000,
+                A400: #000000,
+                A700: #000000)));
+
+$light-theme: mat.define-light-theme((color: (primary: $custom-primary,
+                accent: $custom-secondary,
+            )));
+
+@include mat.core();
+@include mat.all-component-themes($light-theme);
+
+.light-theme {
+    @include mat.all-component-colors($light-theme);
+}
+
+.primary-text {
+    color: mat.get-color-from-palette($custom-primary, 500);
+}
+
+.secondary-text {
+    color: mat.get-color-from-palette($custom-secondary, 200);
+}
+
+.tertiary-text {
+    color: #4F6F52;
+}
+
+.other-text {
+    color: #F5EFE6;
+}
+
+.primary-bg {
+    background-color: mat.get-color-from-palette($custom-primary, 500);
+}
+
+.secondary-bg {
+    background-color: mat.get-color-from-palette($custom-secondary, 200);
+}
+
+.tertiary-bg {
+    background-color: #4F6F52;
+}
+
+.other-bg {
+    background-color: #F5EFE6;
+}
