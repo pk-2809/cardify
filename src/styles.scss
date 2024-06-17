@@ -33,8 +33,68 @@ body {
 
 .custom-bottom .mat-bottom-sheet-container {
   border-radius: 20px 20px 0px 0px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .custom-bottom .mat-bottom-sheet-container-medium {
   min-width: 640px;
+}
+
+.mat-mdc-icon-button.mat-mdc-button-base {
+  padding: 10px 12px 12px 12px;
+}
+
+.mat-horizontal-stepper-header-container,
+.mat-stepper-header {
+  pointer-events: none;
+}
+
+.my-scroll::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+
+.my-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.my-scroll::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.my-scroll::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.my-scroll::-webkit-scrollbar-button {
+  display: none;
+}
+
+.my-scroll {
+  scrollbar-width: thin;
+  // scrollbar-color: #888 #f1f1f1;
+}
+
+.my-scroll {
+  -ms-overflow-style: none;
+}
+
+.my-scroll::-ms-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.my-scroll::-ms-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.my-scroll::-ms-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.my-scroll::-ms-scrollbar-button {
+  display: none;
 }

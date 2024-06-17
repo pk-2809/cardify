@@ -1,0 +1,24 @@
+<div class="px-4 flex flex-col h-full">
+    <h1 class="font-bold primary-text text-xl xs:text-3xl">Your Saved Cards</h1>
+    <div class="card-box mt-4">
+        <div class="card-inner my-scroll">
+            <mat-card class="card mb-4 px-3 xs:px-4" *ngFor="let x of lengthCheck;let i = index;"
+                (click)="onViewCard(x)">
+                <div class="my-3 flex items-center gap-3 xs:gap-4 w-full">
+                    <div class="circle">
+                        <span class="text-sm xs:text-lg">{{ i % 2 == 0 ? 'CC' : 'DC'}}</span>
+                    </div>
+                    <div class="flex flex-col w-full">
+                        <h2 class="tertiary-text font-bold text-base xs:text-lg txt-dotted ">Hii this is credit</h2>
+                        <h2 class="txt-dotted">{{x.name}}</h2>
+                        <p class="card-number text-dotted text-xs xs:text-sm mt-2 xs:mt-0">xxxx-xxxx-xxxx-0{{x.id}}
+                        </p>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+    <div class="my-5 flex items-center justify-center">
+        <button mat-raised-button color="primary" (click)="addNewCard()"> <mat-icon>add</mat-icon> Add New Card</button>
+    </div>
+</div>

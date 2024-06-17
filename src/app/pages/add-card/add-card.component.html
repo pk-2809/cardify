@@ -1,15 +1,100 @@
+<div class="flex justify-between items-center mt-0 xs:mt-2 mx-4">
+    <div></div>
+    <p class="text-center primary-text text-xl font-bold"> Add new card</p>
+    <button mat-icon-button color="secondary" aria-label="close" (click)="closeBottom()">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
+
 <div class="add-card">
-    <div class="add-form">
-        <h1>Add Your Card</h1>
-        <div class="w-full flex justify-evenly items-center">
-            <mat-form-field class="">
-                <mat-label>Email</mat-label>
-                <input matInput type="text">
-            </mat-form-field>
-            <mat-form-field class="">
-                <mat-label>Otp</mat-label>
-                <input matInput type="text">
-            </mat-form-field>
-        </div>
-    </div>
+    <mat-stepper labelPosition="bottom" [disableRipple]="true" #stepper>
+        <mat-step>
+            <ng-template matStepLabel>Basic details</ng-template>
+            <div class="add-form my-scroll">
+                <div class="w-full flex flex-col xs:flex-row gap-2 xs:gap-5 mb-4">
+                    <mat-form-field class="w-full xs:w-1/2">
+                        <mat-label>Name on card</mat-label>
+                        <input matInput placeholder="Name on card" value="">
+                    </mat-form-field>
+                    <mat-form-field class="w-full xs:w-1/2">
+                        <mat-label>Bank Name of Card</mat-label>
+                        <input type="text" placeholder="Pick one" aria-label="Bank Name of Card"
+                            [formControl]="bankNameControl" matInput [matAutocomplete]="auto">
+                        <mat-autocomplete #auto="matAutocomplete">
+                            <mat-option *ngFor="let option of filteredBankNames | async" [value]="option.id">
+                                {{option.name}}
+                            </mat-option>
+                        </mat-autocomplete>
+                    </mat-form-field>
+                </div>
+                <div class="w-full flex flex-col xs:flex-row gap-2 xs:gap-5 mb-4">
+                    <div class="w-full xs:w-1/2">
+                        <div><mat-label>Type of card</mat-label></div>
+                        <mat-radio-group color="primary" class="gap-3" aria-label="Type of card">
+                            <mat-radio-button value="1">Credit Card</mat-radio-button>
+                            <mat-radio-button value="2">Debit Card</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                    <mat-form-field class="w-full xs:w-1/2">
+                        <mat-label>Card Name</mat-label>
+                        <input type="text" placeholder="Pick one" aria-label="Card Name"
+                            [formControl]="bankCardsControl" matInput [matAutocomplete]="auto1">
+                        <mat-autocomplete #auto1="matAutocomplete">
+                            <mat-option *ngFor="let option of filteredBankCards | async" [value]="option.id">
+                                {{option.name}}
+                            </mat-option>
+                        </mat-autocomplete>
+                    </mat-form-field>
+
+                </div>
+                <div class="w-full flex flex-col xs:flex-row gap-2 xs:gap-5">
+                    <div class="w-full xs:w-1/2">
+                        <mat-button-toggle-group name="typeOfCard" aria-label="Type of card">
+                            <mat-button-toggle value="red">Rupay</mat-button-toggle>
+                            <mat-button-toggle value="green">Mastercard</mat-button-toggle>
+                            <mat-button-toggle value="green">Visa</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </div>
+                </div>
+                <div class="mt-4 mb-2 w-full flex items-end justify-end">
+                    <button mat-raised-button color="primary" (click)="next(stepper)">Next</button>
+                </div>
+            </div>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>More details</ng-template>
+            <div class="add-form mt-0 xs:mt-5">
+                <div class="w-full flex flex-col xs:flex-row gap-2 xs:gap-5 items-center mb-4">
+                    <mat-form-field class="w-full xs:w-1/2">
+                        <mat-label>Card Number</mat-label>
+                        <input matInput placeholder="Card Number" value="">
+                    </mat-form-field>
+                    <mat-form-field class="w-full xs:w-1/2">
+                        <mat-label>Card Limit</mat-label>
+                        <input matInput placeholder="Ex. Pizza" value="">
+                    </mat-form-field>
+
+                </div>
+                <div class="w-full flex flex-col xs:flex-row gap-2 xs:gap-5 items-center">
+                    <mat-form-field class="w-full xs:w-1/2">
+                        <mat-label>Choose a month and year</mat-label>
+                        <input matInput [matDatepicker]="picker" [formControl]="dateControl" readonly>
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker startView="multi-year"
+                            (yearSelected)="chosenYearHandler($event, picker)"
+                            (monthSelected)="chosenMonthHandler($event, picker)" disabled="false">
+                        </mat-datepicker>
+                    </mat-form-field>
+                    <mat-form-field class="w-full xs:w-1/2">
+                        <mat-label>Secret CVV code</mat-label>
+                        <input matInput placeholder="Ex. Pizza" value="">
+                    </mat-form-field>
+                </div>
+                <div class="mt-4 mb-2 w-full flex items-end justify-end">
+                    <button mat-stroked-button color="primary" (click)="previous(stepper)">Previous</button>
+                    <button mat-raised-button color="primary" class="ms-4" (click)="onSaveCard()">Save Card</button>
+                </div>
+            </div>
+        </mat-step>
+    </mat-stepper>
 </div>
