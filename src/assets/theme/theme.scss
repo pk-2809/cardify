@@ -29,7 +29,6 @@ $custom-primary: mat.define-palette((50: #e0f2ea,
                 A400: #000000,
                 A700: #ffffff)));
 
-// Define custom secondary color palette
 $custom-secondary: mat.define-palette((50: #f7f4eb,
             100: #f0e9d5,
             200: #e8dfca, // default secondary color
@@ -66,20 +65,26 @@ $light-theme: mat.define-light-theme((color: (primary: $custom-primary,
 @include mat.core();
 @include mat.all-component-themes($light-theme);
 
+:root {
+    --primary-text-color: #1a4d2e; // custom-primary 500
+    --secondary-text-color: #e8dfca; // custom-secondary 200
+    --tertiary-text-color: #4F6F52; // custom tertiary color
+}
+
 .light-theme {
     @include mat.all-component-colors($light-theme);
 }
 
 .primary-text {
-    color: mat.get-color-from-palette($custom-primary, 500);
+    color: var(--primary-text-color);
 }
 
 .secondary-text {
-    color: mat.get-color-from-palette($custom-secondary, 200);
+    color: var(--secondary-text-color);
 }
 
 .tertiary-text {
-    color: #4F6F52;
+    color: var(--tertiary-text-color);
 }
 
 .other-text {
@@ -87,15 +92,15 @@ $light-theme: mat.define-light-theme((color: (primary: $custom-primary,
 }
 
 .primary-bg {
-    background-color: mat.get-color-from-palette($custom-primary, 500);
+    background-color: var(--primary-text-color);
 }
 
 .secondary-bg {
-    background-color: mat.get-color-from-palette($custom-secondary, 200);
+    background-color: var(--secondary-text-color);
 }
 
 .tertiary-bg {
-    background-color: #4F6F52;
+    background-color: var(--tertiary-text-color);
 }
 
 .other-bg {
