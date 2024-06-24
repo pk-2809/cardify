@@ -1,9 +1,15 @@
 .copy-icon {
     color: var(--primary-text-color);
     background-color: white;
-    padding: 11px;
+    padding: 13px;
     border-radius: 8px 8px 0px 0px;
     border: 2px solid var(--secondary-text-color);
     user-select: none;
     cursor: pointer;
+}
+
+@media (min-width:480px) {
+    .copy-icon {
+        padding: 14px;
+    }
 }

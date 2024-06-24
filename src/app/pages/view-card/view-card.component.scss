@@ -1,15 +1,17 @@
 .inp-field .label {
     color: var(--primary-text-color);
-    // font-weight: bold;
-    // width: 180px;
 }
 
 .inp-field .text {
     background-color: white;
-    // min-width: 200px;
-    // border-radius: 8px 8px 0px 0px;
     border: 2px solid var(--secondary-text-color);
-    // user-select: none;
+    font-size: 14px;
 }
 
-@media (min-width:480px) {}
+@media (min-width:480px) {
+    .inp-field .text {
+        background-color: white;
+        border: 2px solid var(--secondary-text-color);
+        font-size: 16px;
+    }
+}
